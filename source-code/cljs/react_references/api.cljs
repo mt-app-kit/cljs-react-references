@@ -8,10 +8,22 @@
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
-; @tutorial How to use?
+; @tutorial Demo #1
 ;
-; @code Demo
+; @code
 ; [:div {:ref (set-reference-f :my-div)} "My div"]
+;
+; [:button {:on-click #(-> :my-div get-reference .-style (set! "background-color: red"))}
+;          "Change background color"]
+; @---
+
+;; ----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
+
+; @tutorial Demo #2
+;
+; @code
+; [:div {:ref #(set-reference! :my-div %)} "My div"]
 ;
 ; [:button {:on-click #(-> :my-div get-reference .-style (set! "background-color: red"))}
 ;          "Change background color"]
