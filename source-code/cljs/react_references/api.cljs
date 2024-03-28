@@ -4,7 +4,7 @@
               [react-references.side-effects :as side-effects]
               [react-references.state        :as state]
               [react-references.utils        :as utils]))
- 
+
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@
 ;
 ; [:button {:on-click #(-> :my-div get-reference .-style (set! "background-color: red"))}
 ;          "Change background color"]
-
+ 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
