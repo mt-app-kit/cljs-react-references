@@ -2,8 +2,14 @@
 (ns react-references.api
     (:require [react-references.env          :as env]
               [react-references.side-effects :as side-effects]
-              [react-references.state        :as state]
               [react-references.utils        :as utils]))
+
+;; ----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
+
+; @tutorial React References
+;
+; Designed for storing React component references in atom.
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -11,7 +17,7 @@
 ; @tutorial Demo #1
 ;
 ; @usage
-; [:div {:ref (set-reference-f :my-div)} "My div"]
+; [:div {:ref (store-reference-f :my-div)} "My div"]
 ;
 ; [:button {:on-click #(-> :my-div get-reference .-style (set! "background-color: red"))}
 ;          "Change background color"]
@@ -22,7 +28,7 @@
 ; @tutorial Demo #2
 ;
 ; @usage
-; [:div {:ref #(set-reference! :my-div %)} "My div"]
+; [:div {:ref #(store-reference! :my-div %)} "My div"]
 ;
 ; [:button {:on-click #(-> :my-div get-reference .-style (set! "background-color: red"))}
 ;          "Change background color"]
@@ -34,10 +40,7 @@
 (def get-reference env/get-reference)
 
 ; @redirect (react-references.side-effects/*)
-(def set-reference! side-effects/set-reference!)
-
-; @redirect (react-references.state/*)
-(def REFERENCES state/REFERENCES)
+(def store-reference! side-effects/store-reference!)
 
 ; @redirect (react-references.utils/*)
-(def set-reference-f utils/set-reference-f)
+(def store-reference-f utils/store-reference-f)

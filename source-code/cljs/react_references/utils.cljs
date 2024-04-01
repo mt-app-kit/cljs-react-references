@@ -5,15 +5,15 @@
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
-(defn set-reference-f
+(defn store-reference-f
   ; @description
-  ; Returns a function that stores the given DOM Element object as reference in the 'REFERENCES' atom.
+  ; Returns a function that stores the given React component reference.
   ;
   ; @param (keyword) reference-id
   ;
   ; @usage
-  ; [:div {:ref (set-reference-f :my-reference)}]
+  ; [:div {:ref (store-reference-f :my-reference)}]
   ;
   ; @return (function)
   [reference-id]
-  (fn [reference] (side-effects/set-reference! reference-id reference)))
+  (fn [reference] (side-effects/store-reference! reference-id reference)))

@@ -1,11 +1,14 @@
 
 (ns react-references.env
-    (:require [react-references.state :as state]))
+    (:require [common-state.api :as common-state]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
 (defn get-reference
+  ; @description
+  ; Returns a stored React component reference.
+  ;
   ; @param (keyword) reference-id
   ;
   ; @usage
@@ -15,5 +18,4 @@
   ;
   ; @return (DOM Element object)
   [reference-id]
-  (get @state/REFERENCES reference-id))
-  
+  (common-state/get-state :react-references reference-id))

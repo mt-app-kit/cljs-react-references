@@ -1,18 +1,18 @@
 
 (ns react-references.side-effects
-    (:require [react-references.state :as state]))
+    (:require [common-state.api :as common-state]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
- 
-(defn set-reference!
+
+(defn store-reference!
   ; @description
-  ; Stores the given DOM Element object as reference in the 'REFERENCES' atom.
+  ; Stores the given React component reference.
   ;
   ; @param (keyword) reference-id
   ; @param (DOM Element object) reference
   ;
   ; @usage
-  ; [:div {:ref #(set-reference! :my-reference %)}]
+  ; [:div {:ref #(store-reference! :my-reference %)}]
   [reference-id reference]
-  (swap! state/REFERENCES assoc reference-id reference))
+  (common-state/assoc-state! :react-references reference-id reference))
